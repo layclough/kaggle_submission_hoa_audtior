@@ -1,0 +1,290 @@
+{
+  "44fc004b8ca90f258fe33f9026803373": {
+    "metadata": {
+      "report_id": "THE-REALTOR-APT-2015-01",
+      "schema_version": "2.0",
+      "hoa_name": "The Realtor Apartment Owners Association"
+    },
+    "overall_verdict": {
+      "verdict": "CAUTION",
+      "verdict_reason": "The association has outstanding delinquent assessment receivables from homeowners and has experienced historical issues with mold and deteriorating asphalt, though it maintains a substantial reserve fund balance.",
+      "highest_urgency_risk_id": "XR-6-1",
+      "total_financial_exposure": null
+    },
+    "risks": {
+      "findings": [
+        {
+          "risk_id": "XR-6-1",
+          "risk_category_id": "financial",
+          "label": "Delinquent Assessment Receivables",
+          "urgency": "HIGH",
+          "finding": "The association reports an aggregate total of $215.12 in common expense assessments that are past due over thirty days by homeowners [source: ResaleCert.txt, Section 6].",
+          "source_document": "ResaleCert.txt",
+          "source_section": "6",
+          "lender_flag": true,
+          "buyer_note": "You may face higher dues if other owners continue to default on their assessments."
+        },
+        {
+          "risk_id": "XR-6-2",
+          "risk_category_id": "legal",
+          "label": "Active Unit Mold Issues",
+          "urgency": "MEDIUM",
+          "finding": "Board meeting minutes indicate that Unit 21 and potentially other units are experiencing active mold issues that require management intervention [source: RegularMeetingMinutes.txt, Page 1].",
+          "source_document": "RegularMeetingMinutes.txt",
+          "source_section": "Page 1",
+          "lender_flag": true,
+          "buyer_note": "Unresolved mold issues in the building could lead to costly remediation assessments."
+        },
+        {
+          "risk_id": "XR-6-3",
+          "risk_category_id": "financial",
+          "label": "Deteriorating Asphalt Infrastructure",
+          "urgency": "MEDIUM",
+          "finding": "The community asphalt has deteriorated, causing cracks in various places, requiring a contractor assessment and warranty review [source: RegularMeetingMinutes.txt, Page 2].",
+          "source_document": "RegularMeetingMinutes.txt",
+          "source_section": "Page 2",
+          "lender_flag": false,
+          "buyer_note": "Asphalt repairs may require funding from reserves or a future special assessment."
+        },
+        {
+          "risk_id": "XR-6-4",
+          "risk_category_id": "restrictions",
+          "label": "Mandatory Carbon Monoxide Detector Installation",
+          "urgency": "LOW",
+          "finding": "State law requires sellers to install operational carbon monoxide detectors prior to selling, which the association does not inspect or verify [source: OtherDocument.txt, Page 1].",
+          "source_document": "OtherDocument.txt",
+          "source_section": "Page 1",
+          "lender_flag": false,
+          "buyer_note": "You must verify that the seller has installed a carbon monoxide detector before closing."
+        }
+      ],
+      "notable_absences": [
+        "The resale certificate does not explicitly contain the conspicuous statutory warning notice regarding the absence of a reserve study required by RCW 64.90.640(1)(y), although a reserve fund balance is disclosed."
+      ]
+    },
+    "financial_outlook": {
+      "monthly_fees": {
+        "current_monthly_fee": 263.66,
+        "source_document": "ResaleCert.txt"
+      },
+      "reserve_fund": {
+        "has_reserve_study": true,
+        "current_percent_funded": null,
+        "shortfall_amount": null,
+        "risk_id": null
+      }
+    },
+    "action_items": [
+      {
+        "action_id": 1,
+        "priority": "High",
+        "action": "Request verification from the seller that an operational carbon monoxide detector has been installed in the unit.",
+        "risk_id": "XR-6-4"
+      },
+      {
+        "action_id": 2,
+        "priority": "Medium",
+        "action": "Inquire with the board regarding the status of mold remediation for Unit 21 and whether common elements are affected.",
+        "risk_id": "XR-6-2"
+      },
+      {
+        "action_id": 3,
+        "priority": "Medium",
+        "action": "Request the latest reserve study to evaluate if the $617,808.70 reserve balance is sufficient to cover upcoming asphalt and painting projects.",
+        "risk_id": "XR-6-3"
+      }
+    ]
+  },
+  "4be2970e2dca4f45371873182a48b84d": {
+    "metadata": {
+      "report_id": "THE-REALTOR-APT-2015-01",
+      "schema_version": "2.0",
+      "hoa_name": "The Realtor Apartment Owners Association"
+    },
+    "overall_verdict": {
+      "verdict": "CAUTION",
+      "verdict_reason": "The association has outstanding delinquent assessment receivables from homeowners and has experienced historical issues with mold and deteriorating asphalt, though it maintains a substantial reserve fund balance.",
+      "highest_urgency_risk_id": "XR-6-1",
+      "total_financial_exposure": null
+    },
+    "risks": {
+      "findings": [
+        {
+          "risk_id": "XR-6-1",
+          "risk_category_id": "financial",
+          "label": "Delinquent Assessment Receivables",
+          "urgency": "HIGH",
+          "finding": "The association reports an aggregate total of $215.12 in common expense assessments that are past due over thirty days by homeowners [source: ResaleCert.txt, Section 6].",
+          "source_document": "ResaleCert.txt",
+          "source_section": "6",
+          "lender_flag": true,
+          "buyer_note": "You may face higher dues if other owners continue to default on their assessments."
+        },
+        {
+          "risk_id": "XR-6-2",
+          "risk_category_id": "legal",
+          "label": "Active Unit Mold Issues",
+          "urgency": "MEDIUM",
+          "finding": "Board meeting minutes indicate that Unit 21 and potentially other units are experiencing active mold issues that require management intervention [source: RegularMeetingMinutes.txt, Page 1].",
+          "source_document": "RegularMeetingMinutes.txt",
+          "source_section": "Page 1",
+          "lender_flag": true,
+          "buyer_note": "Unresolved mold issues in the building could lead to costly remediation assessments."
+        },
+        {
+          "risk_id": "XR-6-3",
+          "risk_category_id": "financial",
+          "label": "Deteriorating Asphalt Infrastructure",
+          "urgency": "MEDIUM",
+          "finding": "The community asphalt has deteriorated, causing cracks in various places, requiring a contractor assessment and warranty review [source: RegularMeetingMinutes.txt, Page 2].",
+          "source_document": "RegularMeetingMinutes.txt",
+          "source_section": "Page 2",
+          "lender_flag": false,
+          "buyer_note": "Asphalt repairs may require funding from reserves or a future special assessment."
+        },
+        {
+          "risk_id": "XR-6-4",
+          "risk_category_id": "restrictions",
+          "label": "Mandatory Carbon Monoxide Detector Installation",
+          "urgency": "LOW",
+          "finding": "State law requires sellers to install operational carbon monoxide detectors prior to selling, which the association does not inspect or verify [source: OtherDocument.txt, Page 1].",
+          "source_document": "OtherDocument.txt",
+          "source_section": "Page 1",
+          "lender_flag": false,
+          "buyer_note": "You must verify that the seller has installed a carbon monoxide detector before closing."
+        }
+      ],
+      "notable_absences": [
+        "The resale certificate does not explicitly contain the conspicuous statutory warning notice regarding the absence of a reserve study required by RCW 64.90.640(1)(y), although a reserve fund balance is disclosed."
+      ]
+    },
+    "financial_outlook": {
+      "monthly_fees": {
+        "current_monthly_fee": 263.66,
+        "source_document": "ResaleCert.txt"
+      },
+      "reserve_fund": {
+        "has_reserve_study": true,
+        "current_percent_funded": null,
+        "shortfall_amount": null,
+        "risk_id": null
+      }
+    },
+    "action_items": [
+      {
+        "action_id": 1,
+        "priority": "High",
+        "action": "Request verification from the seller that an operational carbon monoxide detector has been installed in the unit.",
+        "risk_id": "XR-6-4"
+      },
+      {
+        "action_id": 2,
+        "priority": "Medium",
+        "action": "Inquire with the board regarding the status of mold remediation for Unit 21 and whether common elements are affected.",
+        "risk_id": "XR-6-2"
+      },
+      {
+        "action_id": 3,
+        "priority": "Medium",
+        "action": "Request the latest reserve study to evaluate if the $617,808.70 reserve balance is sufficient to cover upcoming asphalt and painting projects.",
+        "risk_id": "XR-6-3"
+      }
+    ]
+  },
+  "d678f5bececaf70dba275e0187d3c54d": {
+    "metadata": {
+      "report_id": "THE-REALTOR-APT-2015-01",
+      "schema_version": "2.0",
+      "hoa_name": "The Realtor Apartment Owners Association"
+    },
+    "overall_verdict": {
+      "verdict": "CAUTION",
+      "verdict_reason": "The association has outstanding delinquent assessment receivables from homeowners and has experienced historical issues with mold and deteriorating asphalt, though it maintains a substantial reserve fund balance.",
+      "highest_urgency_risk_id": "XR-6-1",
+      "total_financial_exposure": null
+    },
+    "risks": {
+      "findings": [
+        {
+          "risk_id": "XR-6-1",
+          "risk_category_id": "financial",
+          "label": "Delinquent Assessment Receivables",
+          "urgency": "HIGH",
+          "finding": "The association reports an aggregate total of $215.12 in common expense assessments that are past due over thirty days by homeowners [source: ResaleCert.txt, Section 6].",
+          "source_document": "ResaleCert.txt",
+          "source_section": "6",
+          "lender_flag": true,
+          "buyer_note": "You may face higher dues if other owners continue to default on their assessments."
+        },
+        {
+          "risk_id": "XR-6-2",
+          "risk_category_id": "legal",
+          "label": "Active Unit Mold Issues",
+          "urgency": "MEDIUM",
+          "finding": "Board meeting minutes indicate that Unit 21 and potentially other units are experiencing active mold issues that require management intervention [source: RegularMeetingMinutes.txt, Page 1].",
+          "source_document": "RegularMeetingMinutes.txt",
+          "source_section": "Page 1",
+          "lender_flag": true,
+          "buyer_note": "Unresolved mold issues in the building could lead to costly remediation assessments."
+        },
+        {
+          "risk_id": "XR-6-3",
+          "risk_category_id": "financial",
+          "label": "Deteriorating Asphalt Infrastructure",
+          "urgency": "MEDIUM",
+          "finding": "The community asphalt has deteriorated, causing cracks in various places, requiring a contractor assessment and warranty review [source: RegularMeetingMinutes.txt, Page 2].",
+          "source_document": "RegularMeetingMinutes.txt",
+          "source_section": "Page 2",
+          "lender_flag": false,
+          "buyer_note": "Asphalt repairs may require funding from reserves or a future special assessment."
+        },
+        {
+          "risk_id": "XR-6-4",
+          "risk_category_id": "restrictions",
+          "label": "Mandatory Carbon Monoxide Detector Installation",
+          "urgency": "LOW",
+          "finding": "State law requires sellers to install operational carbon monoxide detectors prior to selling, which the association does not inspect or verify [source: OtherDocument.txt, Page 1].",
+          "source_document": "OtherDocument.txt",
+          "source_section": "Page 1",
+          "lender_flag": false,
+          "buyer_note": "You must verify that the seller has installed a carbon monoxide detector before closing."
+        }
+      ],
+      "notable_absences": [
+        "The resale certificate does not explicitly contain the conspicuous statutory warning notice regarding the absence of a reserve study required by RCW 64.90.640(1)(y), although a reserve fund balance is disclosed."
+      ]
+    },
+    "financial_outlook": {
+      "monthly_fees": {
+        "current_monthly_fee": 263.66,
+        "source_document": "ResaleCert.txt"
+      },
+      "reserve_fund": {
+        "has_reserve_study": true,
+        "current_percent_funded": null,
+        "shortfall_amount": null,
+        "risk_id": null
+      }
+    },
+    "action_items": [
+      {
+        "action_id": 1,
+        "priority": "High",
+        "action": "Request verification from the seller that an operational carbon monoxide detector has been installed in the unit.",
+        "risk_id": "XR-6-4"
+      },
+      {
+        "action_id": 2,
+        "priority": "Medium",
+        "action": "Inquire with the board regarding the status of mold remediation for Unit 21 and whether common elements are affected.",
+        "risk_id": "XR-6-2"
+      },
+      {
+        "action_id": 3,
+        "priority": "Medium",
+        "action": "Request the latest reserve study to evaluate if the $617,808.70 reserve balance is sufficient to cover upcoming asphalt and painting projects.",
+        "risk_id": "XR-6-3"
+      }
+    ]
+  }
+}
