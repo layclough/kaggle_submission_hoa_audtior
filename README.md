@@ -53,14 +53,15 @@ Our **Dual-Track Caching Pipeline** acts as an enterprise-grade **Token Blocker*
 └───────────────────────────────────────────────────────────────────────────┘
 ```
 
-## **⚡ Evaluator Quick Start**
+## **⚡ Evaluator Quick Start & Testing Matrix**
 
-To avoid configuration overhead and run the audit dashboard instantly, we provide a **Dual-Track Evaluation Model**. You can choose to run this fully offline with zero setup, or activate your API keys to see live generations.
+To make grading this project as friction-free as possible, we have pre-baked a **Dual-Track Evaluation Model**. You can choose to run this fully offline with zero setup, test active live generations without a database, or connect our production-scale cloud cache.
 
 | Track | Target Audience | Setup Effort | Key Required | Caching Engine Used |
-| :---- | :---- | :---- | :---- | :---- |
-| **Track A: Lightning Offline (Recommended)** | Judges / Quick Reviews | **< 60 Seconds** | **None** | Reads precompiled signatures directly from app/.local_cache.json |
-| **Track B: Production Online** | Advanced Review / Live Testing | **~3-5 Mins** | GEMINI_API_KEY, optional Supabase url/key | Executes live multi-agent calls and updates dual caches |
+| :--- | :--- | :--- | :--- | :--- |
+| **Track A: Lightning Offline (Recommended)** | Judges / Quick Reviews | **< 60 Seconds** | **None** | Reads precompiled signatures directly from `app/.local_cache.json` |
+| **Track B: Active Live AI Agent** | Active Code/Model Review | **~1-2 Mins** | `GEMINI_API_KEY` | Bypasses cache when local cache file is removed. Bypasses database setup completely. |
+| **Track C: Production Cloud Scale** | Enterprise Scalability Review | **~3-5 Mins** | `GEMINI_API_KEY`, Supabase url/key | Executes live multi-agent calls and updates cloud/local caches |
 
 ### **Option A: Lightning Offline Setup (Run in under 60 seconds)**
 
@@ -78,34 +79,46 @@ To avoid configuration overhead and run the audit dashboard instantly, we provid
 
    *The Streamlit dashboard will spin up instantly. It matches our mock document fingerprints, pulls the saved response directly from the sandbox cache file, and loads the complete audit evaluation dashboard in milliseconds with **zero API or Database setup friction**.*
 
-### **Option B: Production Online Setup**
+### **Option B: Active Live AI Agent Setup (Without Supabase)**
 
-To execute live multi-agent audits on custom or modified document inputs:
+To see the multi-agent system executing real-time document audits using live token calls to Gemini:
 
-> [!IMPORTANT]
-> To force the system to run live multi-agent calls to the Gemini API instead of serving cached results, you must remove or rename the local cache file:
-> ```bash
-> rm app/.local_cache.json
-> ```
-
-1. **Configure Environment Variables:**  
+1. **Configure API Key:**  
    Create a `.env` file inside your `app/` folder matching the blueprint in `app/.env.example`:  
    ```bash
    GEMINI_API_KEY=your_gemini_api_key_here
-
-   # Optional Cloud Caching Layer variables:
-   SUPABASE_URL=your_supabase_project_url_here
-   SUPABASE_KEY=your_supabase_anon_public_key_here
    ```
+   *(Leave the Supabase keys completely blank!)*
 
-2. **Deploy Cloud Caching Tables (Optional):**  
-   If using Supabase, run the script in database/schema.sql via your **Supabase SQL Editor** to initialize the cache table and row-level security policy.  
+2. **Delete/Rename the Seeded Cache File:**  
+   To force the pipeline to execute live LLM calls, delete or rename the cache file `app/.local_cache.json` (or simply make a quick text edit in any `.txt` file inside `mock_data/` to alter the document fingerprint).
+
 3. **Run Live Evaluation:**  
    ```bash
    PYTHONPATH=. uv run streamlit run app/ui.py
    ```
 
-   *The system detects active keys, processes your updated mock documents, issues live structural model requests, and stores the new audits securely across both your local sandbox and Supabase cloud tables.*
+   *The system will detect a cache miss, initialize the Gemini multi-agent pipeline via `gemini-2.5-flash`, generate a structured compliance report, and write the result back to a fresh `app/.local_cache.json` file.*
+
+### **Option C: Production Cloud Scale Setup (With Supabase)**
+
+To scale cached outputs globally across distributed teams:
+
+1. **Configure All Environment Variables:**  
+   Create a `.env` file inside your `app/` folder matching the blueprint in `app/.env.example`:  
+   ```bash
+   GEMINI_API_KEY=your_gemini_api_key_here
+   SUPABASE_URL=your_supabase_project_url_here
+   SUPABASE_KEY=your_supabase_anon_public_key_here
+   ```
+
+2. **Deploy Cloud Caching Tables:**  
+   Run the script in `database/schema.sql` via your **Supabase SQL Editor** to initialize the cache table and row-level security policy.
+
+3. **Run Live Evaluation:**  
+   ```bash
+   PYTHONPATH=. uv run streamlit run app/ui.py
+   ```
 
 ## **💡 Core Business Value & Problem Space**
 
