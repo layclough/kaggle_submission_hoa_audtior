@@ -6,9 +6,10 @@ A multi-agent auditing system built using the Google Agent Development Kit (ADK)
 
 Our **Dual-Track Caching Pipeline** acts as an enterprise-grade **Token Blocker** to insulate operating margins from runaway LLM API costs. If a document package hash is already cached, it bypasses the live model entirely, serving structured results instantly.
 
+```text
                      ┌─────────────────────────────────┐  
-                     │   1\. Document Ingestion Layer   │  
-                     │    \- CC\&Rs, Bylaws, Financials  │  
+                     │   1. Document Ingestion Layer   │  
+                     │    - CC&Rs, Bylaws, Financials  │  
                      └────────────────┬────────────────┘  
                                       │  
                                       ▼  
@@ -18,38 +19,39 @@ Our **Dual-Track Caching Pipeline** acts as an enterprise-grade **Token Blocker*
                      └────────────────┬────────────────┘  
                                       │  
                                       ▼  
-                    /───────────────────────────────────\\  
-                   \<   Active Environment Variables?     \>  
-                    \\─────────────────┬─────────────────/  
+                    /───────────────────────────────────\  
+                   <   Active Environment Variables?     >  
+                    \─────────────────┬─────────────────/  
                                       │  
               ┌───────────────────────┴───────────────────────┐  
               ▼ YES                                           ▼ NO (Sandbox Mode)  
   ┌───────────────────────────┐                 ┌───────────────────────────┐  
   │   Level 1: Cloud Cache    │                 │  Level 2: Sandbox Cache   │  
-  │   \- Query Supabase DB     │                 │  \- Query .local\_cache.json│  
+  │   - Query Supabase DB     │                 │  - Query .local_cache.json│  
   └───────────┬───────────────┘                 └─────────────┬─────────────┘  
               │                                               │  
       ┌───────┴───────┐                               ┌───────┴───────┐  
       ▼               ▼                               ▼               ▼  
-  \[Cache Hit\]    \[Cache Miss\]                     \[Cache Hit\]    \[Cache Miss\]  
+  [Cache Hit]    [Cache Miss]                     [Cache Hit]    [Cache Miss]  
       │               │                               │               │  
       │               ▼                               │               ▼  
       │       ┌───────────────────────────┐           │       ┌───────────────────────────┐  
       │       │  Check Level 2 Cache      │           │       │   API Key Provided?       │  
-      │       │  \- Query .local\_cache.json│           │       └───────┬───────────┬───────┘  
+      │       │  - Query .local_cache.json│           │       └───────┬───────────┬───────┘  
       │       └───────┬───────────┬───────┘           │               ▼ YES       ▼ NO  
       │               ▼           ▼                   │               │           │  
-      │          \[Cache Hit\]  \[Cache Miss\]            │               │           ▼  
-      │               │           │                   │               │     \[Simulation Fail/  
-      │               │           ▼                   │               │      Error Response\]  
+      │          [Cache Hit]  [Cache Miss]            │               │           ▼  
+      │               │           │                   │               │     [Simulation Fail/  
+      │               │           ▼                   │               │      Error Response]  
       │               │       ┌───────────┐           │               │  
       │               │       │ Gemini API│           │               │  
       │               │       └─────┬─────┘           │               │  
       ▼               ▼             ▼                 ▼               ▼  
 ┌───────────────────────────────────────────────────────────────────────────┐  
 │                       Interactive UI & Dashboard                          │  
-│         \- Dynamic Risk Cards | Compliance RCW Checklists | Anchors        │  
+│         - Dynamic Risk Cards | Compliance RCW Checklists | Anchors        │  
 └───────────────────────────────────────────────────────────────────────────┘
+```
 
 ## **⚡ Evaluator Quick Start**
 
