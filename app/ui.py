@@ -110,7 +110,15 @@ with col2:
                     
                     # 5. RENDER VERDICT METRIC WARNING BOX
                     verdict_info = report_data.get("overall_verdict", {})
-                    st.error(f"### ⚠️ Overall Verdict: {verdict_info.get('verdict', 'CAUTION ADVISED')}")
+                    verdict_val = verdict_info.get('verdict', 'CAUTION ADVISED').upper()
+                    
+                    if "APPROVED" in verdict_val or "PASS" in verdict_val:
+                        st.success(f"### 🎉 Overall Verdict: {verdict_val}")
+                    elif "WARNING" in verdict_val or "CAUTION" in verdict_val:
+                        st.warning(f"### ⚠️ Overall Verdict: {verdict_val}")
+                    else:
+                        st.error(f"### 🚨 Overall Verdict: {verdict_val}")
+                        
                     st.markdown(f"**Simple English Analysis:** {verdict_info.get('verdict_reason', '')}")
                     st.write("---")
                     
@@ -169,4 +177,4 @@ with col2:
 
             except Exception as e:
                 st.error(f"Dashboard execution anomaly observed: {e}")
-# End of file - triggers hot reload v10
+# End of file - triggers hot reload v11

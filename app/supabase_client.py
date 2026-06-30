@@ -9,14 +9,8 @@ def get_supabase_client() -> Client:
     supabase_url = os.environ.get("SUPABASE_URL", "").strip()
     supabase_key = os.environ.get("SUPABASE_SERVICE_ROLE_KEY", "").strip()
 
-    # Diagnostic debug prints to find the exact issue
-    print(f"[DEBUG] Found URL length: {len(supabase_url)} characters")
-    print(f"[DEBUG] URL Starts with: '{supabase_url[:12]}...'")
-    print(f"[DEBUG] Found KEY length: {len(supabase_key)} characters")
-
-    # If the file stream reader missed the lines entirely
     if not supabase_url or not supabase_key:
-        print("\n[DATABASE NOTICE] Keys are physically empty or missing from the current environment context.")
+        print("\n[DATABASE WARNING] Supabase credentials (SUPABASE_URL/SUPABASE_SERVICE_ROLE_KEY) are missing. DB operations will be bypassed.")
         return None
 
     # Let's completely bypass the strict placeholder text block to force execution
