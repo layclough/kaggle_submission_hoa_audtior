@@ -112,28 +112,30 @@ This application acts as a compliance guardrail, ensuring that real estate profe
 
 ## **📂 Project Structure**
 
-.  
-├── README.md  
-├── agents.json                        \# Core agents definition/discovery configuration  
-├── pyproject.toml                     \# Project packaging and dependencies  
-├── uv.lock                            \# Fully resolved project lockfile  
-├── app/  
-│   ├── \_\_init\_\_.py                    \# Initializes the ADK App  
-│   ├── agent.py                       \# Defines executive\_synthesizer (Root), financial\_specialist, legal\_specialist  
-│   ├── ui.py                          \# Streamlit frontend user interface dashboard  
-│   ├── supabase\_client.py             \# Supabase token-blocker database interaction client  
-│   ├── tools.py                       \# Registers HOA tools for the ADK agents  
-│   └── .env.example                   \# Generic environment variable blueprint (Safe to commit)  
-├── database/  
-│   └── schema.sql                     \# Supabase SQL initialization commands & security policy  
-├── system/  
-│   └── schemas/  
-│       └── report\_manifest.yaml       \# Report Schema v2.0 validation manifest  
-├── tools/  
-│   ├── \_\_init\_\_.py  
-│   └── hoa\_tools.py                   \# Implements tool functions (read\_mcp\_document\_chunk, validate\_cross\_reference)  
-└── tests/  
-    └── eval/  
-        ├── eval\_config.yaml           \# Day 4 evaluation config (metrics & thresholds)  
-        └── datasets/  
-            └── basic-dataset.json     \# Day 4 evaluation test cases  
+```text
+.
+├── README.md
+├── agents.json                        # Core agents definition/discovery configuration
+├── pyproject.toml                     # Project packaging and dependencies
+├── uv.lock                            # Fully resolved project lockfile
+├── app/
+│   ├── __init__.py                    # Initializes the ADK App
+│   ├── agent.py                       # Defines executive_synthesizer (Root), financial_specialist, legal_specialist
+│   ├── ui.py                          # Streamlit frontend user interface dashboard
+│   ├── supabase_client.py             # Supabase token-blocker database interaction client
+│   ├── tools.py                       # Registers HOA tools for the ADK agents
+│   └── .env.example                   # Generic environment variable blueprint (Safe to commit)
+├── database/
+│   └── schema.sql                     # Supabase SQL initialization commands & security policy
+├── system/
+│   └── schemas/
+│       └── report_manifest.yaml       # Report Schema v2.0 validation manifest
+├── tools/
+│   ├── __init__.py
+│   └── hoa_tools.py                   # Implements tool functions (read_mcp_document_chunk, validate_cross_reference)
+└── tests/
+    └── eval/
+        ├── eval_config.yaml           # Day 4 evaluation config (metrics & thresholds)
+        └── datasets/
+            └── basic-dataset.json     # Day 4 evaluation test cases
+```
