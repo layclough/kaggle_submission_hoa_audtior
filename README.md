@@ -59,18 +59,22 @@ To avoid configuration overhead and run the audit dashboard instantly, we provid
 
 | Track | Target Audience | Setup Effort | Key Required | Caching Engine Used |
 | :---- | :---- | :---- | :---- | :---- |
-| **Track A: Lightning Offline (Recommended)** | Judges / Quick Reviews | **\< 60 Seconds** | **None** | Reads precompiled signatures directly from app/.local\_cache.json |
-| **Track B: Production Online** | Advanced Review / Live Testing | **\~3-5 Mins** | GEMINI\_API\_KEY, optional Supabase url/key | Executes live multi-agent calls and updates dual caches |
+| **Track A: Lightning Offline (Recommended)** | Judges / Quick Reviews | **< 60 Seconds** | **None** | Reads precompiled signatures directly from app/.local_cache.json |
+| **Track B: Production Online** | Advanced Review / Live Testing | **~3-5 Mins** | GEMINI_API_KEY, optional Supabase url/key | Executes live multi-agent calls and updates dual caches |
 
 ### **Option A: Lightning Offline Setup (Run in under 60 seconds)**
 
 1. **Clone & Setup:**  
-   git clone \[https://github.com/layclough/kaggle\_submission\_hoa\_auditor.git\](https://github.com/layclough/kaggle\_submission\_hoa\_auditor.git)  
-   cd kaggle\_submission\_hoa\_auditor  
+   ```bash
+   git clone https://github.com/layclough/kaggle_submission_hoa_auditor.git
+   cd kaggle_submission_hoa_auditor
    uv sync
+   ```
 
-2. **Execute Terminal Run Command (No environment variables required\!):**  
+2. **Execute Terminal Run Command (No environment variables required!):**  
+   ```bash
    PYTHONPATH=. uv run streamlit run app/ui.py
+   ```
 
    *The Streamlit dashboard will spin up instantly. It matches our mock document fingerprints, pulls the saved response directly from the sandbox cache file, and loads the complete audit evaluation dashboard in milliseconds with **zero API or Database setup friction**.*
 
@@ -79,17 +83,21 @@ To avoid configuration overhead and run the audit dashboard instantly, we provid
 To execute live multi-agent audits on custom or modified document inputs:
 
 1. **Configure Environment Variables:**  
-   Create a .env file inside your app/ folder matching the blueprint in app/.env.example:  
-   GEMINI\_API\_KEY=your\_gemini\_api\_key\_here
+   Create a `.env` file inside your `app/` folder matching the blueprint in `app/.env.example`:  
+   ```bash
+   GEMINI_API_KEY=your_gemini_api_key_here
 
-   \# Optional Cloud Caching Layer variables:  
-   SUPABASE\_URL=your\_supabase\_project\_url\_here  
-   SUPABASE\_KEY=your\_supabase\_anon\_public\_key\_here
+   # Optional Cloud Caching Layer variables:
+   SUPABASE_URL=your_supabase_project_url_here
+   SUPABASE_KEY=your_supabase_anon_public_key_here
+   ```
 
 2. **Deploy Cloud Caching Tables (Optional):**  
    If using Supabase, run the script in database/schema.sql via your **Supabase SQL Editor** to initialize the cache table and row-level security policy.  
 3. **Run Live Evaluation:**  
+   ```bash
    PYTHONPATH=. uv run streamlit run app/ui.py
+   ```
 
    *The system detects active keys, processes your updated mock documents, issues live structural model requests, and stores the new audits securely across both your local sandbox and Supabase cloud tables.*
 
