@@ -34,7 +34,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.title("🏢 Smart HOA Document Risk Auditor")
+st.title("🏢 HOA Document Risk Auditor")
 st.markdown("### Turning 300+ Pages of Legal Noise into Simple, Actionable Clarity")
 st.write("---")
 
